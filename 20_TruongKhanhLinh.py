@@ -1,21 +1,10 @@
-# student_manager.py
-# Họ tên: Trương Khánh Linh – MSSV: 20
+def search_student(search_name):
+    print("--- KET QUA TIM KIEM ---")
+    found = False
+    for s in student_list:
+        if search_name.lower() in s['name'].lower():
+            print(f" - Ten: {s['name']}, Nam sinh: {s['year_of_birth']}, Dia chi: {s['address']}")
+            found = True
+    if not found:
+        print("Khong tim thay sinh vien nao.")
 
-# Danh sách để lưu thông tin các sinh viên.
-# Mỗi sinh viên là một dictionary.
-student_list = []
-
-def add_student(name, year_of_birth, address):
-    """
-    YÊU CẦU 1:
-    - Tạo một dictionary để lưu thông tin sinh viên.
-    - Thêm dictionary đó vào danh sách `student_list`.
-    - In ra thông báo "Da them sinh vien <ten> thanh cong."
-    """
-    student = {
-        "name": name,
-        "year_of_birth": year_of_birth,
-        "address": address
-    }
-    student_list.append(student)
-    print(f"Da them sinh vien {name} thanh cong.")
